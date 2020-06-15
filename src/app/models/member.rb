@@ -11,7 +11,8 @@ class Member < ApplicationRecord
     validates :name, presence: true,
       format: {
         with: /¥A[A-Za-z][A-Za-z0-9]*¥z/,
-        allow_blank: true
+        allow_blank: true,
+        message: :invalid_member_name
       },
       length: {
         minimum: 2,
